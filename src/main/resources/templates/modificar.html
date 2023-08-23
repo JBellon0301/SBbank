@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"
+    xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title> Datos del Usuario </title>
+        <meta charset="UTF-8"></meta>
+    </head>
+    <body>
+        <h1>Datos del Usuario</h1>
+        <a th:href="@{/}">Regresar</a>
+        <br/>
+        <form th:action="@{/guardar}" method="post" th:object="${persona}">
+            
+            <input type="hidden" name="id_persona" th:field="*{id_persona}"/>
+
+            <br/>
+            <label for="num_documento">Número de Identificación: </label>
+            <input type="number" name="num_documento" th:field="*{num_documento}"/>
+            <br/>
+            <label for="nombre">Nombre: </label>
+            <input type="text" name="nombre" th:field="*{nombre}"/>
+            <br/>
+            <label for="apellido">Apellido:  </label>
+            <input type="text" name="apellido" th:field="*{apellido}"/>
+            <br/>
+            <label for="email">Email: </label>
+            <input type="text" name="email" th:field="*{email}"/>
+            <br/>
+            <label for="password">Password: </label>
+            <input type="text" name="password" th:field="*{password}"/>
+            <br/>
+            <label for="telefono">Teléfono: </label>
+            <input type="tel" name="telefono" th:field="*{telefono}"/>
+            <br/>
+            <input type="hidden" name="created_at" th:field="*{created_at}"/>
+            <input type="hidden" name="updated_at" th:field="*{updated_at}"/>
+            <br/>
+            <input type="submit" name="guardar" value="Guardar"/>
+        </form>
+    </body>
+</html>
